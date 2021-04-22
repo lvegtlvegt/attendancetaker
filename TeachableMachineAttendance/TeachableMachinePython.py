@@ -1,8 +1,9 @@
-import cv2aa
+# Import the following in to PyCharm:
+#   Pillow
+#   Pillow-PIL
+#   OpenCV (cv2)
 
-
-
-
+import cv2
 import sys
 from time import sleep
 import tensorflow.keras
@@ -46,7 +47,8 @@ class TeachableMachinePython:
             if predict[i] > pred_value:
                 pred_value = predict[i]
                 pred_idx = i
-        self.predicted_label = "%s %2.2f" % (self.labels[pred_idx], pred_value)
+        #self.predicted_label = "%s %2.2f" % (self.labels[pred_idx], pred_value)
+        self.predicted_label = "%s" % (self.labels[pred_idx])
         return self.predicted_label
 
     def display_prediction_on_image(self, frame, predict):
@@ -63,13 +65,13 @@ class TeachableMachinePython:
         # font
         font = cv2.FONT_HERSHEY_SIMPLEX
         # org
-        org = (int(width*0.45), int(height*0.95))
+        org = (int(width*0.1), int(height*0.95))
         # fontScale
         fontScale = 1
         # Red color in BGR
         color = (1,350,0)
         # Line thickness of 2 px
-        thickness = 1
+        thickness = 3
         # Using cv2.putText() method
         frame = cv2.putText(frame, predict_text, org, font, fontScale,
                      color, thickness, cv2.LINE_AA, False)

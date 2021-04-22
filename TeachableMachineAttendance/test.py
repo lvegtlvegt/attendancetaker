@@ -1,6 +1,9 @@
 from TeachableMachinePython import TeachableMachinePython
+from Attendance.Attendance import Attendance
 
 my_test = TeachableMachinePython("keras_model.h5", "labels.txt")
+attendance = Attendance("..\Attendance\webdesignstudents.csv", "Web Design")
+
 #my_test.main_processing_loop()
 
 loop_flag = True

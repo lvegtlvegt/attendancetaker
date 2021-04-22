@@ -13,10 +13,14 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-    attendance = Attendance("webdesignstudents.csv", "Web Design")
+    attendance = Attendance("webdesignstudents2.csv", "Web Design")
 #    attendance = Attendance("", "Web Design")
-    print(attendance.getStudentList())
-    attendance.studentPresent("Jill")
-    attendance.printAbsentList()
+#    print(attendance.getStudentList())
+    attendance.studentPresent("Charlie")
+    attendance.studentPresent("Charlie")
+    attendance.studentPresent("Charlie")
+    attendance.studentPresent("Charlie")
+    attendance.studentPresent("Charlie")
+#    attendance.printAbsentList()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
