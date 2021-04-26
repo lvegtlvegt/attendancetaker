@@ -1,11 +1,14 @@
-
+import keyboard
 import time
 
 
 def main_processing():
-
+    loopy = True
     try:
-        while True:
+        while loopy:
+            if keyboard.is_pressed('q'):  # if key 'q' is pressed
+                print ("keyboard pressed")
+                loopy = False
             print("loopy")
             time.sleep(1)
     except KeyboardInterrupt:

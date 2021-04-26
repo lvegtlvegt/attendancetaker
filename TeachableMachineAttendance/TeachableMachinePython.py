@@ -9,6 +9,7 @@ from time import sleep
 import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
+import keyboard
 
 class TeachableMachinePython:
 
@@ -43,11 +44,11 @@ class TeachableMachinePython:
     def show_prediction(self, predict):
         pred_idx = -1.0
         pred_value = -1.0
-        for i in range(len(predict)-1):
+        for i in range(len(predict) - 1):
             if predict[i] > pred_value:
                 pred_value = predict[i]
                 pred_idx = i
-        #self.predicted_label = "%s %2.2f" % (self.labels[pred_idx], pred_value)
+        # self.predicted_label = "%s %2.2f" % (self.labels[pred_idx], pred_value)
         self.predicted_label = "%s" % (self.labels[pred_idx])
         return self.predicted_label
 
@@ -65,16 +66,16 @@ class TeachableMachinePython:
         # font
         font = cv2.FONT_HERSHEY_SIMPLEX
         # org
-        org = (int(width*0.1), int(height*0.95))
+        org = (int(width * 0.1), int(height * 0.95))
         # fontScale
         fontScale = 1
         # Red color in BGR
-        color = (1,350,0)
+        color = (1, 350, 0)
         # Line thickness of 2 px
         thickness = 3
         # Using cv2.putText() method
         frame = cv2.putText(frame, predict_text, org, font, fontScale,
-                     color, thickness, cv2.LINE_AA, False)
+                            color, thickness, cv2.LINE_AA, False)
         return frame
 
     # call this 4 methods if you wish to access the predicted label of the image.  Call in the order listed
@@ -121,6 +122,7 @@ class TeachableMachinePython:
         cv2.destroyAllWindows()
 
     # main processing loop without access to predicted label
+
     def main_processing_loop(self):
 
         loop_flag = True
@@ -130,6 +132,7 @@ class TeachableMachinePython:
             loop_flag = self.main_check_to_end_loop()
 
         self.main_loop_stop()
+
 
 # main processing code
 '''
@@ -146,8 +149,7 @@ while loop_flag:
 
 my_test.main_loop_stop()
 
-'''
+
 
 print("Done")
-
-
+'''
